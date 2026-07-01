@@ -1,0 +1,134 @@
+# mongo:
+#   yn_model_test:
+#     mongo_url: '192.168.5.13:27017'
+#     mongo_user: algotest
+#     mongo_pass: algotest123
+#     mongo_auth_source: yn_model_test
+#     mongo_collection:
+#       D_5:
+#         new_energy_solar: cnn_model_predict_liaoning_solar_realtime
+#         new_energy_wind: cnn_model_predict_liaoning_wind_realtime
+#       D_1:
+#         backcheck_new_energy_solar: cnn_model_backcheck_shanxi_solar_realtime
+#         backcheck_new_energy_wind: cnn_model_backcheck_shanxi_wind_realtime
+#         backcheck_ahead_new_energy_solar: cnn_model_backcheck_shanxi_solar_ahead
+#         backcheck_ahead_new_energy_wind: cnn_model_backcheck_shanxi_wind_ahead
+#         new_energy_solar: cnn_model_predict_shanxi_solar_realtime
+#         new_energy_wind: cnn_model_predict_shanxi_wind_realtime
+#         ahead_new_energy_solar: cnn_model_predict_shanxi_solar_ahead
+#         ahead_new_energy_wind: cnn_model_predict_shanxi_wind_ahead
+#       D_long:
+#         ahead_new_energy_solar: cnn_model_long_shanxi_solar_ahead
+#         ahead_new_energy_wind: cnn_model_long_shanxi_wind_ahead
+#       no_version:
+#         ahead_info: wjq_test_ahead_version
+#         realtime_power_info: wjq_test_label_version
+#         data_path: ods_nwp_files_info
+#         anhui_info: anhui_trading_center_test
+#         liaoning_info: liaoning_trading_center_test
+#         test_info: wjq_test_mongo_chart
+#   yn_model_predicts:
+#     mongo_url: '192.168.5.13:27017'
+#     mongo_user: algorithm
+#     mongo_pass: algorithm123
+#     mongo_auth_source: yn_model_predicts
+#     mongo_collection:
+#       D_10:
+#         ahead_power_tree_pred_shanxi_longtime: ahead_power_prediction_shanxi_new_power_longtime_four_point
+#       D_14:
+#         realtime_power_tree_pred_shanxi: realtime_power_prediction_shanxi_14days
+#       D_1:
+#         realtime_power_tree_pred_shanxi: realtime_power_prediction_shanxi_daily
+#         ahead_power_tree_pred_shanxi_merge: ahead_power_prediction_shanxi_merge
+#   yn_ams_dw:
+#     mongo_url: '1.94.208.154:8635'
+#     mongo_user: algorithm
+#     mongo_pass: algorithm123
+#     mongo_auth_source: yn_ams_dw
+#     mongo_collection:
+#       ods:
+#         shanxi_p_power_grid_run_info_sx: ods_shanxi_p_power_grid_run_info_sx
+#       dwd:
+#         shanxi_inter_provincial_dispatch_load_day_ahead: dwd_shanxi_inter_provincial_dispatch_load_day_ahead
+#         shanxi_non_market_output_day_ahead: dwd_shanxi_non_market_output_day_ahead
+#         shanxi_call_wire_plan_day_ahead: dwd_shanxi_call_wire_plan_day_ahead
+#         shanxi_new_energy_load_wind_day_ahead: dwd_shanxi_new_energy_load_wind_day_ahead
+#         shanxi_new_energy_load_luce_day_ahead: dwd_shanxi_new_energy_load_luce_day_ahead
+#         shanxi_crew_capacity_power: dwd_shanxi_unit_status_and_real_time_power_output
+  # yn_ams_dw_test:
+  #   mongo_url: '1.94.208.154:8635'
+  #   mongo_user: algorithm
+  #   mongo_pass: algorithm123
+  #   mongo_auth_source: admin
+  #   mongo_collection:
+  #     ods:
+  #       guangxi_new_energy: ods_guangxi_p_new_energy_day_ahead
+  #       liaoning_new_energy_ahead_test: ods_liaoning_p_new_energy_day_ahead_revised
+  #       liaoning_new_energy_realtime_test: ods_liaoning_p_new_energy_real_time_revised
+minio:
+  cold:
+    minio_url: minio-api.aienertech.cn
+    minio_access_key: admin
+    minio_secret_key: k2whP9awwZpuNHLZ
+    bucket_name: meteor
+    minio_secure: true
+requests:
+  _ahead_new_energy_solar: https://algyn-power.aienertech.cn/api/interplate/power/solar
+  _ahead_new_energy_wind: https://algyn-power.aienertech.cn/api/interplate/power/wind
+  _pred_d_5: https://algyn-power-power-impu-daily.aienertech.cn/api/interpolate/power/daily/
+  _pred_d_10_1: https://algyn-power-power-impu-daily.aienertech.cn/api/interpolate/power/daily/
+  _pred_d_1: https://algyn-power-power-impu-daily.aienertech.cn/api/interpolate/power/daily/
+  _daily: https://algyn-power-power-impu-daily.aienertech.cn/api/interpolate/power/daily/
+  meteo_sr_shanxi: http://192.168.31.2:32700/api/sr/HAT_shanxi
+  power_interp: https://algyn-power-power-impu-daily.aienertech.cn/api/interpolate/power/daily/
+doris:
+  jiangsu:
+    doris_user: jiangsu
+    doris_password: qI2rK2mN4lF6
+    doris_host: 192.168.21.2
+    doris_fe_port: 31116
+    doris_be_port: 31363
+    doris_database: jiangsu_test
+    table_name:
+      # D_1:
+      #   new_energy_solar: ods_realtime_solar_96p
+      #   new_energy_wind: ods_realtime_wind_96p
+      #   ahead_new_energy_solar: ods_ahead_solar_96p
+      #   ahead_new_energy_wind: ods_ahead_wind_96p
+      # D_5:
+      #   eval_new_energy_solar: ods_realtime_5days_solar_n24p
+      #   eval_new_energy_wind: ods_realtime_5days_wind_n24p
+      #   new_energy_solar: ads_realtime_5days_solar_96_24p
+      #   new_energy_wind: ads_realtime_5days_wind_96_24p
+      # D_long:
+      #   ahead_new_energy_solar_4p: ods_ahead_long_solar_4p
+      #   ahead_new_energy_solar_24p: ads_ahead_long_solar_24p
+      #   ahead_new_energy_wind_4p: ods_ahead_long_wind_4p
+      #   ahead_new_energy_wind_24p: ads_ahead_long_wind_24p
+      realtime:
+        new_energy: ods_realtime_new_energy_24p
+        new_energy_solar: ods_realtime_solar_24p
+        new_energy_wind: ods_realtime_solar_24p
+
+      # no_version:
+      #   ahead_info: ads_dl_ahead_power_label
+      #   realtime_power_info: ads_dl_realtime_power_label
+      # test:
+      #   test_info: ods_doris_dl_test_table
+  meteo:
+    doris_user: meteo_readonly
+    doris_password: 5hfLpOz4
+    doris_host: 192.168.21.2
+    doris_fe_port: 31116
+    doris_be_port: 31363
+    doris_database: meteo
+    table_name:
+      no_version:
+        hres: ods_terraqt_ecmwf_hres_by_station_v
+        station: ads_terraqt_station_realtime
+        era5: ads_cds_era5_by_station
+        data_path: ods_minio_metainfo
+        # shanxi_weighted_wind_hres: ads_hres_shanxi_weighted_wind_24p
+        # shanxi_weighted_solar_hres: ads_hres_shanxi_weighted_solar_24p
+
+        

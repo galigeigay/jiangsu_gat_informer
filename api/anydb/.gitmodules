@@ -1,0 +1,3 @@
+[submodule "pkg/DorisClient"]
+	path = pkg/DorisClient
+	url = https://github.com/Bing1996/DorisClient.git

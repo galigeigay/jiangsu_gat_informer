@@ -1,0 +1,6 @@
+class TableNotExist(Exception):
+    ...
+
+
+class DorisStreamLoadError(Exception):
+    ...

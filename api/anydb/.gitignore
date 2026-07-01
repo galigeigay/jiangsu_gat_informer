@@ -1,0 +1,14 @@
+.idea
+.vsocde
+
+*.pyc
+*/__pycache__/*
+__pycache__
+
+data
+log
+venv
+
+*.yml
+
+*.ipynb
