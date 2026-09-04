@@ -340,7 +340,7 @@ threshold = 1000
 
 ```bash
 # 进入项目目录
-cd /data00/chenjiajun/202605/jiangsu_power_predict_gat_informer
+cd jiangsu_power_predict_gat_informer
 
 # 安装依赖
 pip install -r requirements.txt
